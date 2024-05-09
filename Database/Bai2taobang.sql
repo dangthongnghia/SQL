@@ -1,0 +1,58 @@
+
+CREATE TABLE NHANVIEN (
+    MaNV CHAR(12) PRIMARY KEY,
+    HoNV NVARCHAR(20),
+    TenNV NVARCHAR(10),
+    NgaySinh DATE,
+    DiaChi NVARCHAR(100),
+    Phai NVARCHAR(3),
+    Luong FLOAT,
+    MaNQL CHAR(12),
+    MaPhong CHAR(5),
+    
+);
+
+ALTER TABLE NHANVIEN ADD PRIMARY KEY (MaNV); -- thêm khóa chính cho bảng NHANVIEN
+ALTER TABLE NHANVIEN ADD FOREIGN KEY (MaNQL) REFERENCES NHANVIEN(MaNV); -- thêm khóa ngoại cho bảng NHANVIEN
+
+CREATE TABLE PHONGBAN (
+    MaPhong CHAR(5) PRIMARY KEY,
+    TenPhong NVARCHAR(50),
+    TruongPhong NVARCHAR(50),
+    NgayNhanChuc DATE
+);
+
+CREATE TABLE DIADIEMPHONG (
+    MaPhong CHAR(5) PRIMARY KEY,
+    DiaDiem NVARCHAR(100),
+   
+);
+
+CREATE TABLE DEAN (
+    MaDA CHAR(10) PRIMARY KEY,
+    TenDA NVARCHAR(50),
+    DdiemDA NVARCHAR(100),
+    MaPhong CHAR(5),
+);
+
+CREATE TABLE PHANCONG (
+    MaNV CHAR(12),
+    MaDA CHAR(10),
+    ThoiGian DATE,
+    
+);
+
+CREATE TABLE THANNHAN (
+    MaTN VARCHAR(12) PRIMARY KEY,
+    HoTN NVARCHAR(50),
+    TenTN NVARCHAR(50),
+    Phai NVARCHAR(3),
+    NgaySinh DATE
+);
+
+CREATE TABLE NVIEN_TNHAN (
+    MaNV CHAR(12),
+    MaTN CHAR(12),
+    QuanHe NVARCHAR(50),
+    
+);
