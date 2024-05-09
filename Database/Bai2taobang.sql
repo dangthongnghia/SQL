@@ -6,9 +6,9 @@ CREATE TABLE NHANVIEN (
     NgaySinh DATE,
     DiaChi NVARCHAR(100),
     Phai NVARCHAR(3),
-    Luong FLOAT,
+    Luong SMALLINT,
     MaNQL CHAR(12),
-    MaPhong CHAR(5),
+    MaPhong CHAR(5) NOT NULL,
     
 );
 
@@ -38,7 +38,7 @@ CREATE TABLE DEAN (
 CREATE TABLE PHANCONG (
     MaNV CHAR(12),
     MaDA CHAR(10),
-    ThoiGian DATE,
+    ThoiGian SMALLDATETIME,
     
 );
 
