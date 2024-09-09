@@ -146,3 +146,18 @@ FROM
     NHANVIEN
 WHERE 
     DATEDIFF(YEAR, NGAYSINH, GETDATE()) < 40;
+
+SELECT
+    MANV,
+    [Họ tên nhân viên],
+    LUONG,
+    LUONG * 1.4 AS Tien_Thuong
+FROM
+    NHANVIEN;
+
+SELECT TOP 2
+    [Họ tên nhân viên],
+    NGAYSINH,
+    NGAYBC
+FROM
+    NHANVIEN;
