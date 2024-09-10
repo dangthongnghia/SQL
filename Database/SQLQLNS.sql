@@ -161,3 +161,99 @@ SELECT TOP 2
     NGAYBC
 FROM
     NHANVIEN;
+
+SELECT 
+	MaNV,
+	[Họ tên nhân viên],
+	GIOITINH,
+	NGAYSINH,
+	LUONG
+FROM
+	NHANVIEN
+WHERE 
+	MAPHONG = 'HCA';
+
+SELECT 
+    MaNV,
+    [Họ tên nhân viên],
+    NGAYSINH,
+    LUONG
+FROM 
+    NHANVIEN
+WHERE 
+    LUONG BETWEEN 2000000 AND 3000000;
+
+SELECT 
+    MaNV,
+    [Họ tên nhân viên],
+    NGAYSINH,
+    LUONG
+FROM 
+    NHANVIEN
+WHERE 
+    LUONG NOT BETWEEN 1000000 AND 2000000;
+
+SELECT 
+	MaNV,
+	[Họ tên nhân viên],
+	GIOITINH,
+	NGAYSINH,
+	LUONG
+FROM
+	NHANVIEN
+WHERE 
+	MAPHONG = 'HCA' OR MAPHONG ='KDA';
+
+SELECT 
+    MaNV,
+    [Họ tên nhân viên],
+    NGAYSINH,
+    LUONG
+FROM 
+    NHANVIEN
+ORDER BY 
+    LUONG ASC;
+
+SELECT 
+    MaNV,
+    [Họ tên nhân viên],
+    NGAYSINH,
+    LUONG
+FROM 
+    NHANVIEN
+ORDER BY 
+    LUONG DESC;
+
+SELECT 
+    AVG(LUONG) AS LuongTrungBinh
+FROM 
+    NHANVIEN
+WHERE 
+    MAPHONG = 'KDA';
+
+SELECT 
+    MaNV,
+    [Họ tên nhân viên],
+    NGAYSINH,
+    LUONG,
+    SDT
+FROM 
+    NHANVIEN
+WHERE 
+    SDT IS NULL OR SDT = '';
+
+
+SELECT 
+    COUNT(*) AS TongNhanVien,
+    AVG(LUONG) AS LuongTrungBinh
+FROM 
+    NHANVIEN;
+
+
+SELECT 
+    MAPHONG,
+    SUM(LUONG) AS TongLuong
+FROM 
+    NHANVIEN
+GROUP BY 
+    MAPHONG;    
